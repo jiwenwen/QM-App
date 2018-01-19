@@ -1,0 +1,230 @@
+/*tab*/
+.tab{
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    top: 4rem;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    font-size: 1.17rem;
+}
+.tab .tab-content{
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.tab .tab-first{
+    float: left;
+    font-size: 1.25rem;
+    color: #D1C28A;
+    width:20%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+.tab .tab-second{
+    float: left;
+    margin-left: 10%;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    background: #D1C28A;
+    border-radius: 1.5rem;
+    max-width:70%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+
+.tab .tab-first span{
+    height: 2rem;
+    line-height: 2rem;
+}
+.tab .tab-second span{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+    display: inline-block;
+}
+
+/*detail*/
+.detail{
+    /*另一种方法*/
+    /*   position: relative;
+        top: 7rem;
+        margin-left: 6.5%;
+        width: 87%;
+        margin-top: 0.75rem;
+        padding-bottom: 7rem;*/
+    position: absolute;
+    top: 9rem;
+    width: 100%;
+    overflow-y: auto;
+    bottom: 0rem;
+}
+
+.detail .detail-content{
+    width: 100%;
+}
+.detail .detail-content img{
+    width: 100%;
+    height: auto;
+}
+.detail .detail-content .detail-item{
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.line-scroll-wrapper {
+    height: 100%;
+    clear: both;
+}
+.line-normal-wrapper {
+    display: inline-block;
+    float: left;
+    padding-top: 0.8rem;
+    padding-left: 6.5%;
+    padding-right: 6.5%;
+    padding-bottom: 0.8rem;
+    position: relative;
+    width: 100%;
+}
+
+.detail .detail-content .detail-item .detail-left{
+	float: left;
+    width: 7.2rem;
+    height: 5.4rem;
+    overflow: hidden;
+}
+
+
+.detail .detail-content .detail-item .detail-right{
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+    height: 5.4rem;
+    padding-top: 0.9rem;
+}
+.detail .detail-content .detail-item .detail-right>div:nth-child(1){
+  position: relative;
+  height:1.5rem;
+  line-height:1.5rem;
+}
+.detail .detail-content .detail-item .detail-right>div:nth-child(1)>span:nth-child(1){
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.detail .detail-content .detail-item .detail-right>div:nth-child(2){
+	margin-top:0.6rem;
+	height:1.5rem;
+	line-height:1.5rem;
+}
+/*.detail .detail-content .detail-item .detail-right>div:nth-child(2)>span:nth-child(2){
+    width: 4rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 3.9rem;
+    right: 6.5%;
+}
+.detail .detail-content .detail-item .detail-right>div:nth-child(2)>span:nth-child(2) img{
+    height: 100%!important;
+}*/
+.detail .detail-content .detail-item .detail-right>div:nth-child(2) span:nth-child(1){
+    font-size: 1.17rem;
+    color: #666;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status{
+	width: 4rem;
+    height: 1.5rem;
+	position: absolute;
+    top: 3.8rem;
+    right: 6.5%;
+}
+
+.status img{
+	height: 100%!important;
+}
+
+.detail .detail-content .detail-item .time{
+    position: absolute;
+    top: 1.7rem;
+    right: 6.5%;
+
+ }
+.detail .detail-content .detail-item .time span:nth-child(1){
+    width: 1.17rem;
+    height: 1.17rem;
+    display: inline-block;
+    position: absolute;
+    top: 0rem;
+    left: -1.5rem;
+}
+
+.detail .detail-content .detail-item .time span:nth-child(2){
+    font-size: 1rem;
+    color: #999999;
+}
+.detail .detail-content .detail-item .delay span:nth-child(2){
+    font-size: 1rem;
+    color: #CF1515!important;
+}
+.detail .detail-content .detail-item .state{
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 12%;
+}
+
+.detail .detail-content .detail-item .state img{
+    width: 100%;
+    height: 100%;
+}
+
+.line-btn-delete{
+    background: #FF3F3F;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 7rem;
+    color: white;
+    height: 7rem;
+    width: 7rem;
+    position: absolute;
+    right: -8rem;
+    top: 0rem;
+}
+
+.add-problem{
+    text-align: center;
+    color: #666666;
+    font-size: 1.5rem;
+    height: 4.17rem;
+    line-height: 4.17rem;
+    background: #F6F3E8;
+    display: none;
+}
+.add-problem>span:nth-child(1){
+    width: 1.83rem;
+    height: 1.83rem;
+    display: inline-block;
+    line-height: 1.83rem;
+}
+
+/**/
+.loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    z-index: 10
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="bookmark" href="../../images/favicon.ico" type="image/x-icon"/>
+    <title>金螳螂质量App-中国装饰行业持续领跑者</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/manager/proList.css">
+</head>
+<body>
+<div id="QMApp" class="qm-con" v-cloak>
+    <!--header-->
+    <!--<div class="header">
+        <div class="header-content clearfix">
+            <div class="header-middle">
+                <span>项目整改</span>
+            </div>
+            <div class="header-right">
+                <img src="../../images/staff/proList/search.png" v-on:click="searchProject">
+            </div>
+            <div class="header-search clearfix">
+                <div class="search-left">
+                    <div v-on:click="searchPj"><img src="../../images/staff/proList/search2.png"></div>
+                    <div class="search-input"><input placeholder="输入项目名称/编号" onfocus="this.placeholder=''" onblur="this.placeholder='输入项目名称/编号'"></div>
+                    <div v-on:click="searchDelete"><img src="../../images/staff/proList/delete.png"></div>
+                </div>
+                <div class="search-right" v-on:click="cancelSearch">
+                    <span>取消</span>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--tab标签-->
+    <div class="tab">
+        <div class="tab-content clearfix">
+            <div class="tab-first" v-on:click="tabChange" typeid="1">
+                <div>
+                    <span class="active">待整改</span>
+                    <div class="message">
+                        <span>{{count}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-second" v-on:click="tabChange" typeid="2">
+                <span>待复核</span>
+            </div>
+            <div class="tab-third" v-on:click="tabChange" typeid="3">
+                <span>已完成</span>
+            </div>
+        </div>
+    </div>
+    <!--搜索-->
+    <div class="header">
+        <div class="header-content">
+            <div class="header-search clearfix">
+                <div class="search-left">
+                    <div v-on:click="searchPj"><img src="../../images/staff/proList/search2.png"></div>
+                    <div class="search-input"><input placeholder="输入项目名称/编号" onfocus="this.placeholder=''" onblur="this.placeholder='输入项目名称/编号'"></div>
+                    <div v-on:click="searchDelete"><img src="../../images/staff/proList/delete.png"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--content-->
+    <div class="detail" id="wrapper">
+        <div id="scroller">
+            <div class="detail-content rectification" typeid="1">
+                <div class="detail-item" v-on:click="problemLst" v-for="(message,index) in rectificationLst" v-bind:pjId="message.Project_Id">
+                    <div class="detail-first">
+                        <span>{{message.Project_Code}}</span>
+                        <span>{{message.CheckCount}}</span>
+                    </div>
+                    <div class="detail-second">
+                        <span>{{message.Project_Name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-content review" typeid="2">
+                <div class="detail-item" v-on:click="problemLst" v-for="(message,index) in reviewLst" v-bind:pjId="message.Project_Id">
+                    <div class="detail-first">
+                        <span>{{message.Project_Code}}</span>
+                        <span>{{message.CheckCount}}</span>
+                    </div>
+                    <div class="detail-second">
+                        <span>{{message.Project_Name}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-content complete" typeid="3">
+                <div class="detail-item" v-on:click="problemLst" v-for="(message,index) in completeLst" v-bind:pjId="message.Project_Id">
+                    <div class="detail-first">
+                        <span>{{message.Project_Code}}</span>
+                        <span>{{message.CheckCount}}</span>
+                    </div>
+                    <div class="detail-second">
+                        <span>{{message.Project_Name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--黑色背景-->
+    <div class="black"></div>
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-content clearfix">
+            <div class="footer-left">
+                <div>
+                    <a href="proList.html">
+                        <img src="../../images/manager/proList/rectification-selected.png">
+                        <div >
+                            <span>整改</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div>
+                    <a href="sr/report.html">
+                        <img src="../../images/manager/proList/report.png">
+                        <div>
+                            <span>报表</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--loading-->
+    <div class="loading"></div>
+    <div class="submit-cover">
+        <div class="cover-inner load5">
+            <div class="loader">Loading...</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../../lib/jquery/jquery.min.js" ></script>
+<script type="text/javascript" src="../../../lib/iscroll.js" ></script>
+<script type="text/javascript" src="../../../lib/mobilePart.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/mobiscroll_date.js" ></script>
+<script type="text/javascript" src="../../../lib/jquery/mobiscroll.js" ></script>
+<script type="text/javascript" src="../../../lib/vue/dist/vue.min.js" ></script>
+<script type="text/javascript" src="../../../lib/vue/dist/vue-resource.min.js" ></script>
+<script type="text/javascript" src="../../../lib/util_nm.js" ></script>
+<script type="text/javascript" src="../../js/manager/proList.js"></script>
+</body>
+</html>

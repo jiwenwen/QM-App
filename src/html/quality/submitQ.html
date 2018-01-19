@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<link rel="shortcut icon" href="../../images/favicon.ico" />
+		<link rel="bookmark" href="../../images/favicon.ico" type="image/x-icon"　/>
+		<title>金螳螂质量App-中国装饰行业持续领跑者</title>
+		<link rel="stylesheet" href="../../css/base.css" />
+		<link rel="stylesheet" href="../../css/quality/submitQ.css" />
+		<link rel="stylesheet" href="../../css/mobiscroll_date.css" />
+		<style>
+			[v-cloak] {
+			    display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <p style="position:absolute;width:50px;height:50px;background:red;left:40%;top:40%;z-index:999;" class="asdf"></p> -->
+		<div id="QMApp" class="qm-con">
+			<!--<div class="header">
+				<div class="header-content clearfix">
+					<div class="header-middle">
+						<span>添加整改</span>
+					</div>
+				</div>
+			</div>-->
+			<!--问题提交主体部分-->
+			<div id="initial" class="form_submitType1 top-0">
+				<form id="page1" class="page1">
+					<div class="projectName clearfix">
+						<label>项目名称</label>
+						<!--项目名称及项目Id-->
+						<input class="projectList" v-bind:projectId="draftMessage.Project_Id" v-model="draftMessage.Project_Name" placeholder="点击选择   " readonly="readonly" />
+						<!--<input class="projectList" v-else projectId="" placeholder="点击选择" readonly="readonly" />-->
+						<p>请选择项目</p>
+					</div>
+					<table class="formTable">
+						<tr class="problemType">
+							<th><span>问题类别</span></th>
+							<td>
+								<!--问题类别及Id-->
+								<input class="problemList" v-if="draftMessage.Type_Name=='金螳螂基础数据'" v-bind:problemType="draftMessage.Question_Type" readonly="readonly" placeholder="点击选择 >" />
+								<input class="problemList" v-else v-bind:problemType="draftMessage.Question_Type" v-model="draftMessage.Type_Name" readonly="readonly" placeholder="点击选择 >" />
+								<!--<select class="problemType-list">
+									<option v-for="a in problemType" v-bind:value="a.Parent_Id" v-cloak>{{a.Type_Name}}</option>
+								</select>-->
+							</td>
+						</tr>
+						<tr class="problemDescription">
+							<!--问题描述-->
+							<template v-cloak v-if="draftMessage.Type_Name=='其他'">
+								<th colspan="2">
+									<span>问题描述</span>
+									<textarea class="probdes2" v-model="draftMessage.Question_Desc" placeholder="补充说明"></textarea>
+								</th>
+							</template>
+							<template v-cloak v-else>
+								<th colspan="1">
+									<span>问题描述</span>
+								</th>
+								<td>
+									<input class="probdes1" type="text" v-model="draftMessage.Question_Desc" readonly="readonly" placeholder="点击选择 >" />
+									<p>请选择问题描述</p>
+								</td>
+							</template>
+						</tr>
+						<tr class="problemLevel">
+							<th><span>问题等级</span></th>
+							<td>
+								<ul class="levelClass clearfix">
+									<li value="1">A</li>
+									<li value="2">B</li>
+									<li class="problemLevel3 levelSelect" value="3">C</li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="contract">
+							<th><span>合同名称</span></th>
+							<td>
+								<input class="contract_input" type="text" readonly="readonly" v-bind:contractId="draftMessage.contractId" v-model="draftMessage.contractName" placeholder="点击选择 >" />
+							</td>
+						</tr>
+						<tr class="rectification">
+							<th><span>整改对象</span></th>
+							<td>
+								<table>
+									<tr>
+										<th @click="selectTS" typeId="1"><i></i>带班长</th>
+										<td>
+											<input v-cloak v-if="second.rectificate==1" class="team" type="text" readonly="readonly" v-bind:teamId="draftMessage.teamId" v-model="draftMessage.teamName" placeholder="点击选择 >" />
+										</td>
+									</tr>
+									<tr>
+										<th @click="selectTS" typeId="2"><i></i>供应商</th>
+										<td>
+											<input v-cloak v-if="second.rectificate==2" class="supplier" type="text" readonly="readonly" v-bind:teamId="draftMessage.teamId" v-model="draftMessage.teamName" placeholder="点击选择 >" />
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<!--备注-->
+						<tr class="remarks">
+							<th colspan="2"><span>备注</span><textarea v-model="draftMessage.Memo" placeholder="补充说明"></textarea></th>
+							
+							
+							<!--<td>
+								<textarea placeholder="补充说明"></textarea>
+								<p>请添加备注</p>
+							</td>-->
+						</tr>
+						<tr class="uploadPhotos">
+							<th colspan="2" class="clearfix">
+								<span>上传照片</span>
+								<div v-if="Imgs.length!=0" v-for="a in Imgs">
+									<i></i>
+									<img v-bind:src="a.Doc_Path">
+								</div>
+								<div class="choose-photo" v-if="Imgs.length<6">
+									<span></span>
+									<p>请选择照片</p>
+								</div>
+							</th>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!--项目编号/名称列表-->
+			<div class="project_list">
+				<div class="pheader clearfix">
+					<div class="psearchbox clearfix">
+						<span class="psearchbtn"></span>
+						<input class="psearchinput" placeholder="请输入项目编号或名称" />
+						<span class="psearchclear"></span>
+					</div>
+					<p class="pcancel">取消</p>
+				</div>
+				<div class="pcontentOut">
+					<ul class="pcontent qm-scrollbar">
+						<li v-for="a in projectName" v-bind:projectId="a.Project_Id">
+							<span v-cloak>{{a.Project_Code}}</span>
+							<span v-cloak>{{a.Project_Name}}</span>
+						</li>
+					</ul>
+				</div>	
+			</div>
+			<!-- 合同 -->
+			<div class="contract_list">
+				<div class="pop_header clearfix">
+					<div class="pop_search clearfix">
+						<span class="pop_searchButton"></span>
+						<input class="pop_searchInput" placeholder="请输入合同编号或名称" />
+						<span class="pop_searchClear"></span>
+					</div>
+					<p class="pop_cancel">取消</p>
+				</div>
+				<div class="pop_contentOut">
+					<ul class="pop_content qm-scrollbar">
+						<li v-for="a in second.contractData" v-bind:contractId="a.Contract_Id">
+							<span v-html="a.Contract_Code"></span>
+							<span v-html="a.Contract_Name"></span>
+						</li>
+					</ul>
+				</div>	
+			</div>
+			<!-- 班组供应商 -->
+			<div class="team_list">
+				<div class="pop_header clearfix">
+					<div class="pop_search clearfix">
+						<span class="pop_searchButton"></span>
+						<input class="pop_searchInput" placeholder="请输入编号或名称" />
+						<span class="pop_searchClear"></span>
+					</div>
+					<p class="pop_cancel">取消</p>
+				</div>
+				<div class="pop_contentOut">
+					<ul class="pop_content qm-scrollbar">
+						<li v-for="a in second.unitData" v-bind:unitId="a.Unit_Id">
+							<span style="width:65%" v-html="a.UnitName"></span>
+							<span v-html="a.Mobile"></span>
+							<span v-if="a.IsOn&&second.rectificate==1" :style="{'background':'green'}">在场</span>
+							<span v-if="!a.IsOn&&second.rectificate==1" :style="{'background':'red'}">离场</span>
+						</li>
+					</ul>
+				</div>	
+			</div>
+			<!--问题类别-->
+			<div class="problemTypewindow qm-scrollbar">
+				<div class="problemTypewindow-header">问题类别<span>返回</span></div>
+				<ul class="problemList">
+					<li v-for="a in problemType" v-bind:value="a.Type_Id" v-cloak>{{a.Type_Name}}</li>
+				</ul>
+			</div>
+			<!--问题描述的列表-->
+			<div class="problemSub qm-scrollbar">
+				<div class="problemList-header clearfix">
+					<div class="back">返回</div>
+					<div>问题描述</div>
+					<div class="sure">确认</div>
+				</div>
+				<ul class="problemList">
+					<li v-for="a in description" class="clearfix">
+						<span></span>
+						<p v-cloak>{{a.Type_Name}}</p>
+					</li>
+				</ul>
+				<div class="problemList-write clearfix">
+					<span></span>
+					<textarea placeholder="补充说明"></textarea>
+				</div>
+			</div>
+			<!--提示框-->
+			<div class="pub-confirmSub"  style="display: none">
+				<div class="pub-confirmWindow">
+					<div class="pub-title">确认提交？</div>
+					<div class="pub-content">
+						<div class="closeTime">
+							<p>整改时限</p>
+							<input readonly="readonly" id="closeTime" placeholder="请选择关闭时间" />
+						</div>
+						<!--<div class="closeReseon">
+							<p>复核意见</p>
+							<textarea></textarea>
+						</div>-->
+						<span>请核实后再提交！</span>
+					</div>
+					<div class="pub-buttom">
+						<div class="pub-cancel" value="false">取消</div>
+						<div class="pub-confirm" value="true">确定</div>
+					</div>
+				</div>
+			</div>
+			<div class="view">
+				<template v-for="(a,index) in viewImg">
+					<div class="touch" v-if="index==0" v-bind:style="{marginLeft:displacement + '%'}">
+						<div>
+							<div>
+								<img v-bind:src="a.Doc_Path">
+							</div>
+						</div>
+					</div>
+					<div class="touch" v-else>
+						<div>
+							<div>
+								<img v-bind:src="a.Doc_Path">
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+			<div class="sb_bottom">
+				<div value="save">保存</div>
+				<div value="submit">提交</div>
+			</div>
+		</div>
+		<div class="submit-cover">
+			<div class="cover-inner load5">
+				<div class="loader">Loading...</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../lib/jquery/jquery.min.js" ></script>
+		<script type="text/javascript" src="../../../lib/mobilePart.js"></script>
+		<script type="text/javascript" src="../../../lib/jquery/mobiscroll_date.js" ></script>
+		<script type="text/javascript" src="../../../lib/jquery/mobiscroll.js" ></script>
+		<script type="text/javascript" src="../../../lib/vue/dist/vue.min.js" ></script>
+		<script type="text/javascript" src="../../../lib/vue/dist/vue-resource.min.js" ></script>
+		<script type="text/javascript" src="../../../lib/util_nm.js" ></script>
+		<script type="text/javascript" src="../../js/quality/submitQ.js"></script>
+		<!--<script type="text/javascript" src="../../../lib/sea.js" ></script>-->
+		<!--<script type="text/javascript" src="../../../lib/config.js" ></script>-->
+		<!--<script type="text/javascript">
+		    seajs.use("../../js/staff/submitQ");
+		</script>-->
+	</body>
+</html>

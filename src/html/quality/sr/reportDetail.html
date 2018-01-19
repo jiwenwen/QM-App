@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<link rel="shortcut icon" href="../../../images/favicon.ico" />
+		<link rel="bookmark" href="../../../images/favicon.ico" type="image/x-icon" 　/>
+		<title>金螳螂质量App-中国装饰行业持续领跑者</title>
+		<link rel="stylesheet" href="../../../css/base.css" />
+		<link rel="stylesheet" href="../../../css/quality/sr/reportDetail.css" />
+		<style>
+			[v-cloak] {
+			    display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="QMApp" class="qm-con">
+			<!--<div class="header clearfix">
+				<div class="header">
+					<div class="header-content clearfix">
+						<div class="header-middle">
+							<span>分公司质量检查分布</span>
+						</div>
+					</div>
+				</div>
+			</div>-->
+			<div class="package top-0">
+				<div class="searchBox">
+					<div class="problemLevel"><span v-cloak v-html="search[1].problemLevelName"></span>
+						<ul class="levelList">
+							<li>所有</li>
+							<li>A级</li>
+							<li>B级</li>
+							<li>C级</li>
+						</ul>
+					</div>
+
+					<div class="problemType" v-bind:problemType="search[0].problemTypeCode" v-cloak>{{search[0].problemTypeName}}
+						<ul class="problemTypeList">
+							<li problemTypeCode="0">所有</li>
+							<li v-for="a in problemType" v-bind:problemTypeCode="a.Type_Id">{{a.Type_Name}}</li>
+						</ul>
+					</div>
+				</div>
+				<div id="detailData"></div>
+			</div>
+			<div class="black"></div>
+		</div>
+		<script type="text/javascript" src="../../../../lib/jquery/jquery.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/mobilePart.js"></script>
+		<script type="text/javascript" src="../../../../lib/jquery/mobiscroll_date.js" ></script>
+		<script type="text/javascript" src="../../../../lib/jquery/mobiscroll.js" ></script>
+		<script type="text/javascript" src="../../../../lib/vue/dist/vue.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/vue/dist/vue-resource.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/echarts/echarts.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/util_nm.js" ></script>
+		<script type="text/javascript" src="../../../js/quality/sr/reportDetail.js" ></script>
+	</body>
+</html>
+

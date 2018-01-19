@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="bookmark" href="../../images/favicon.ico" type="image/x-icon"　/>
+    <title>金螳螂质量App-中国装饰行业持续领跑者</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/staff/list.css">
+</head>
+<body>
+<div id="QMApp" class="qm-con" v-cloak>
+    <!--header-->
+    <!--<div class="header">
+        <div class="header-content clearfix">
+            <div class="header-middle">
+                <span>整改详情</span>
+            </div>
+        </div>
+    </div>-->
+    <!--tab标签-->
+    <div class="tab">
+        <div class="tab-content clearfix">
+            <div class="tab-first">
+                <span>项目名称</span>
+            </div>
+            <div class="tab-second">
+                <span>{{pjName}}</span>
+            </div>
+        </div>
+    </div>
+    <!--content-->
+    <div class="detail"  id="wrapper">
+        <div id="scroller">
+            <div class="detail-content">
+                <div class="detail-item line-wrapper" v-for="message in problemLst">
+                    <div class="line-scroll-wrapper clearfix">
+                        <div class="line-normal-wrapper" v-on:click="reviewDetail" v-bind:listId="message.List_Id" v-bind:checkCount="message.CheckCount" v-bind:checkId="message.Check_Id" typeid="0">
+                            <div class="detail-left">
+                                <span><img v-bind:src="message.Attachments[0].filePath" v-if="message.Attachments[0]"></span>
+                                <span><img src="../../images/staff/proList/img.png" v-if="!message.Attachments[0]"></span>
+                            </div>
+                            <div class="detail-right">
+                                <span>{{message.Check_Code}}</span>
+                                <span>{{message.Type_Name}}</span>
+                                <span>{{message.Question_Desc}}</span>
+                            </div>
+                            <template v-if="status!=3&&status!=0">
+                                <div class="time" v-if="message.Day_Left>=0">
+                                    <span><img src="../../images/staff/list/time.png"></span>
+                                    <span>剩余{{message.Day_Left}}天</span>
+                                </div>
+                                <div class="time delay" v-if="message.Day_Left<0">
+                                    <span><img src="../../images/staff/list/time1.png"></span>
+                                    <span v-cloak>延期{{Math.abs(message.Day_Left)}}天</span>
+                                </div>
+                            </template>
+                            <template v-if="message.Quality_Role==1">
+                                <div class="qs-icon">
+                                    <img src="../../images/staff/list/qs.png">
+                                </div>
+                            </template>
+                            <template v-if="message.Quality_Role==2">
+                                <div class="qs-icon">
+                                    <img src="../../images/staff/list/sg.png">
+                                </div>
+                            </template>
+                        </div>
+                        <div class="line-btn-delete" v-on:click="deleteItem" v-bind:listId="message.List_Id">删除</div>
+                    </div>
+                </div>
+                <div class="add-problem">
+                    <span><img src="../../images/staff/list/add.png"></span>
+                    <span v-on:click="enterSubmitQ">添加整改</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-content clearfix">
+            <div class="footer-left">
+                <div>
+                    <a href="proList.html">
+                        <img src="../../images/staff/proList/rectification.png">
+                        <div >
+                            <span>整改</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div >
+                    <a href="submitQ.html">
+                        <img src="../../images/staff/proList/initiated.png">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div>
+                    <a href="sr/report.html">
+                        <img src="../../images/staff/proList/report.png">
+                        <div>
+                            <span>报表</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--loading-->
+    <div class="loading"></div>
+    <div class="submit-cover">
+        <div class="cover-inner load5">
+            <div class="loader">Loading...</div>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="../../../lib/jquery/jquery.min.js" ></script>
+<script type="text/javascript" src="../../../lib/iscroll.js" ></script>
+<script type="text/javascript" src="../../../lib/mobilePart.js"></script>
+<script type="text/javascript" src="../../../lib/jquery/mobiscroll_date.js" ></script>
+<script type="text/javascript" src="../../../lib/jquery/mobiscroll.js" ></script>
+<script type="text/javascript" src="../../../lib/vue/dist/vue.min.js" ></script>
+<script type="text/javascript" src="../../../lib/vue/dist/vue-resource.min.js" ></script>
+<script type="text/javascript" src="../../../lib/util_nm.js" ></script>
+<script type="text/javascript" src="../../js/staff/list.js"></script>
+</body>
+</html>

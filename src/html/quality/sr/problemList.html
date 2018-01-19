@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="shortcut icon" href="../../../images/favicon.ico" />
+    <link rel="bookmark" href="../../../images/favicon.ico" type="image/x-icon" 　/>
+    <title>金螳螂质量App-中国装饰行业持续领跑者</title>
+    <link rel="stylesheet" href="../../../css/base.css" />
+    <link rel="stylesheet" href="../../../css/quality/sr/problemList.css">
+</head>
+<body>
+<div id="QMApp" class="qm-con">
+    <!--header-->
+    <!--<div class="header">
+        <div class="header-content clearfix">
+            <div class="header-middle">
+                <span>整改详情</span>
+            </div>
+        </div>
+    </div>-->
+    <!--tab标签-->
+    <div class="tab top-0">
+        <div class="tab-content clearfix">
+            <div class="tab-first">
+                <span>项目名称</span>
+            </div>
+            <div class="tab-second">
+                <span>{{pjName}}</span>
+            </div>
+        </div>
+
+    </div>
+    <!--content-->
+    <div class="detail top-5">
+        <div class="detail-content">
+            <div class="detail-item line-wrapper" v-for="message in problemLst">
+                <div class="line-scroll-wrapper clearfix">
+                    <div class="line-normal-wrapper" v-on:click="reviewDetail" v-bind:state="message.Rectify_Status" v-bind:listId="message.List_Id" v-bind:type="message.CheckCount" v-bind:checkId="message.Check_Id" typeid="0">
+                        <div class="detail-left">
+                            <span><img v-bind:src="message.Attachments[0].filePath" v-if="message.Attachments[0]"></span>
+                            <span><img src="../../../images/staff/proList/img.png" v-if="!message.Attachments[0]"></span>
+                        </div>
+                        <div class="detail-right clearfix">
+                            <div>
+                                <span>{{message.Type_Name}}</span>
+                            </div>
+                            <div>
+                                <span>{{message.Question_Desc}}</span>
+                            </div>
+                        </div>
+                        <template v-if="message.Rectify_Status!=3">
+                            <div class="time" v-if="message.Day_Left>=0">
+                                <span><img src="../../../images/staff/list/time.png"></span>
+                                <span>剩余{{message.Day_Left}}天</span>
+                            </div>
+                            <div class="time delay" v-if="message.Day_Left<0">
+                                <span><img src="../../../images/staff/list/time1.png"></span>
+                                <span v-cloak>延期{{Math.abs(message.Day_Left)}}天</span>
+                            </div>
+                        </template>
+                        <div class="status">
+                        	<span v-if="message.Rectify_Status==1"><img src="../../../images/staff/problemList/process.png"></span>
+                            <span v-if="message.Rectify_Status==2"><img src="../../../images/staff/problemList/review.png"></span>
+                            <span v-if="message.Rectify_Status==3"><img src="../../../images/staff/problemList/complete.png"></span>
+                        </div>
+                    <!--    <div class="state">
+
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--loading-->
+    <div class="loading"></div>
+
+
+</div>
+<script type="text/javascript" src="../../../../lib/jquery/jquery.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/mobilePart.js"></script>
+<script type="text/javascript" src="../../../../lib/jquery/mobiscroll_date.js" ></script>
+<script type="text/javascript" src="../../../../lib/jquery/mobiscroll.js" ></script>
+<script type="text/javascript" src="../../../../lib/vue/dist/vue.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/vue/dist/vue-resource.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/vue/dist/vue-router.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/util_nm.js" ></script>
+<script type="text/javascript" src="../../../js/quality/sr/problemList.js" ></script>
+</body>
+</html>
+

@@ -1,0 +1,706 @@
+/*detail*/
+.detail{
+    /*另一种方法*/
+    /*   position: relative;
+        top: 7rem;
+        margin-left: 6.5%;
+        width: 87%;
+        margin-top: 0.75rem;
+        padding-bottom: 7rem;*/
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    overflow-y: auto;
+    bottom: 4rem;
+}
+
+.detail .detail-content{
+    width: 100%;
+}
+.detail .detail-content img{
+    width: 100%;
+    height: auto;
+}
+.detail .detail-content .detail-item:nth-child(1){
+     padding-bottom: 1.17rem;
+     border-bottom: 1px solid rgba(209,192,138,0.25);
+     position: relative;
+    display: none;
+ }
+.detail .detail-content .detail-item:nth-child(2){
+    padding-bottom: 1.17rem;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    position: relative;
+    display: none;
+}
+.detail .detail-content .detail-item:nth-child(3){
+    position: relative;
+    display: none;
+    margin-bottom: 0.3rem;
+}
+.detail .detail-content .detail-item:nth-child(6){
+    position: relative;
+    display: none;
+}
+.detail .detail-content .detail-item .detail-first{
+    height: 3.33rem;
+    padding-left: 6.5%;
+    padding-right: 6.5%;
+}
+.detail .detail-content .detail-item .detail-first div:nth-child(1){
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 3%;
+    height: 3.33rem;
+    background: #D1C08A;
+}
+.detail .detail-content .detail-item .detail-first div:nth-child(2){
+    font-size: 1.25rem;
+    color: #333333;
+    line-height: 3.33rem;
+}
+.detail .detail-content .detail-item .detail-first div:nth-child(3){
+    position: absolute;
+    top: 0.3rem;
+    right: 6.5%;
+}
+.detail .detail-content .detail-item .detail-first div:nth-child(3) span:nth-child(1){
+    display: block;
+    font-size: 1rem;
+    height: 1.25rem;
+    line-height: 1.65rem;
+    color: #666666;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.detail .detail-content .detail-item .detail-first div:nth-child(3) span:nth-child(2){
+    display: block;
+    text-align: right;
+    font-size: 1.17rem;
+    height:1.65rem;
+    line-height: 1.65rem;
+    color: #666666;
+}
+.detail .detail-content .detail-item .detail-first div:nth-child(3) span:nth-child(3){
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    height:1.65rem;
+    line-height: 1.65rem;
+    color: #666666;
+}
+.detail .detail-content .detail-item .detail-second{
+    padding-left: 6.5%;
+}
+
+
+
+.detail .detail-content .detail-item .detail-second div:nth-child(1){
+    color:#333333;
+    font-size: 1.17rem;
+    margin-top: 0.83rem;
+}
+.detail .detail-content .detail-item .detail-second .memo{
+    color:#333333;
+    font-size: 1.17rem;
+    margin-top: 0.83rem;
+    margin-right: 6.5%;
+}
+.detail .detail-content .detail-item .detail-second .img-group{
+    margin-top: 0.83rem;
+}
+.detail .detail-content .detail-item .detail-second .img-group ul li{
+    width: 30%;
+    height: 6.5rem;
+    float: left;
+    margin-right: 1.6%;
+    margin-bottom: 1.6%;
+    overflow: hidden;
+}
+
+
+.detail .expand-detail{
+    display: none;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(209,192,138,0.25)
+}
+.detail .expand-detail .expand-detail-content{
+    padding-top: 1.5rem;
+
+}
+.detail .expand-detail .expand-detail-item .item-content{
+    position: relative;
+    margin-left: 12%;
+    margin-right: 6.5%;
+    border: 1px solid rgba(209,192,138,0.25);
+    margin-bottom: 1rem;
+
+}
+.detail .expand-detail .expand-detail-item .content-img{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 2rem;
+    left: -2.4rem;
+}
+
+.detail .expand-detail .expand-detail-item .content-first{
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.detail .expand-detail .expand-detail-item .content-img img{
+    width: 100%;
+    height: 100%;
+}
+.detail .expand-detail .expand-detail-item .content-first .content-first-left{
+}
+.detail .expand-detail .expand-detail-item .content-first .content-first-left span:nth-child(1){
+    color: #333333;
+    float: left;
+    font-size: 1.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 65%;
+}
+.detail .expand-detail .expand-detail-item .content-first .content-first-left span:nth-child(2){
+    color: #666666;
+    float: right;
+    font-size: 1em;
+}
+.detail .expand-detail .expand-detail-item .content-first .content-first-right{
+    font-size: 1rem;
+}
+.detail .expand-detail .expand-detail-item .content-first .content-first-right span:nth-child(1){
+    color: #D1C08A;
+    float: left;
+    font-size: 1.17rem;
+    text-align: right;
+}
+.detail .expand-detail .expand-detail-item .content-first .content-first-right span:nth-child(2){
+    color: #666666;
+    float: right;
+    font-size: 1em;
+    text-align: right;
+}
+.detail .expand-detail .content-second{
+    font-size: 1.17rem;
+    color: #333333;
+    margin-left: 5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.detail .expand-detail .content-second1{
+    margin-bottom: 1.5%
+}
+.detail .expand-detail .content-second2 span{
+    font-size: 1.17rem;
+    color: #333333;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.detail .expand-detail .content-second3{
+    width: 100%;
+    margin-top: 0.83rem;
+    margin-bottom: 0.83rem;
+}
+.detail .detail-content .expand-detail .content-second3 ul li {
+    width: 30%;
+    height: 6.5rem;
+    float: left;
+    margin-right: 1.6%;
+    margin-bottom: 1.6%;
+    overflow: hidden;
+}
+.detail .expand-detail .item-content:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    border: 0.5px solid rgba(209,192,138,0.25);
+    top: 3.5rem;
+    left: -1.7rem;
+}
+
+.detail .expand-detail .expand-detail-item:last-child>.item-content:before{
+    display: none;
+}
+/**/
+.detail .expand-button{
+    text-align: center;
+    color: #999999;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    border-top: 1px solid rgba(209,192,138,0.25);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.detail .expand-button span {
+    font-size: 1.1rem;
+}
+.detail .expand-button img{
+    width: 1rem;
+}
+/**/
+.submit-btn{
+    width: 100%;
+    height: 4rem;
+    position: fixed;
+    bottom: 0;
+    line-height: 4rem;
+    font-size: 1.42rem;
+    text-align: center;
+    cursor: pointer;
+    background: #D1C08A;
+    color: #fff;
+    display: none;
+}
+/*刘杰整改反馈部分*/
+
+.qm-con .form_submitType2{
+    width:100%;
+}
+.formlist{
+    display: none;
+}
+.form_submitType2 .formtable{
+    width:100%;
+}
+.form_submitType2 .formtable th>span:before {
+    content: '*';
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    color: red;
+    position: absolute;
+    left: 1rem;
+}
+.contractName span:before{
+    content: ''!important;
+}
+.form_submitType2 tr{
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+}
+
+.form_submitType2 th{
+    width: 25%;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 1.25rem;
+    padding: 0.8rem 4% 0.8rem 0;
+    color: #666666;
+    padding-left: 6.5%;
+}
+
+.contractName td{
+    width: 60%;
+    padding: 0.55rem 0;
+    text-align: right;
+    padding-right: 6.5%;
+}
+
+.contractName input{
+    width:80%;
+    height:3rem;
+    border-radius: 2px;
+    font-size:1.25rem;
+    padding-left:10px;
+    color:#333333;
+    border: none;
+    text-align: right;
+}
+.contractName td span{
+    color: #DBDBDB;
+    font-size: 1.6rem;
+}
+.teamName td{
+    width: 60%;
+    padding: 0.55rem 0;
+    text-align: right;
+    padding-right: 6.5%;
+}
+
+.teamName input{
+    width:80%;
+    height:3rem;
+    border-radius: 2px;
+    font-size:1.25rem;
+    padding-left:10px;
+    color:#333333;
+    border: none;
+    text-align: right;
+}
+.teamName td span{
+    color: #DBDBDB;
+    font-size: 1.6rem;
+}
+
+.whetherChange td{
+    width: 60%;
+    padding: 0.55rem 0;
+    padding-left: 6rem;
+    padding-right: 6.5%;
+}
+
+.whetherChange ul{
+    width:100%;
+    border-radius:2.25rem;
+    height:2.5rem;
+    border:1px solid #CCC;
+    box-sizing:border-box;
+}
+
+.whetherChange ul li{
+    float:left;
+    width:50%;
+    border-radius:2.25rem;
+    height:100%;
+    line-height:2.5rem;
+    text-align:center;
+}
+
+.yesornot{
+    color:#FFFFFF;
+    background:#D1C08A;
+}
+
+.solution th{
+    vertical-align: top;
+    padding-top:15px;
+}
+
+.solution th span{
+	float:left!important;
+	display:block!important;
+	width:100%!important;
+}
+.solution{
+    height: 14rem;
+}
+.solution td{
+    width: 60%;
+    padding: 0.55rem 0;
+    position: absolute;
+    top: 18rem;
+    left: 6.5%;
+}
+
+.solution textarea{
+    width: 80%;
+    height: 8.83rem;
+    border-radius: 2px;
+    resize: none;
+    border: none;
+    margin-top: 0.5rem;
+    float:left;
+}
+
+.changePhotos td{
+    width: 60%;
+    padding: 0.55rem 0;
+    position: absolute;
+    top: 31.5rem;
+    left: 6.5%;
+}
+.changePhotos{
+    height: 11rem;
+}
+.changePhotos th{
+    vertical-align: top;
+}
+
+.changePhotos ul{
+	width:100%;
+}
+
+.changePhotos th div{
+	position: relative;
+    min-height: 6.5rem;
+    width: 30%;
+    margin-right:3%;
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin-top: 0.1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.changePhotos th li{
+    position: relative;
+    min-height: 6.5rem;
+    width: 30%;
+    margin-right:3%;
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin-top: 0.1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.changePhotos th i{
+	display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background: url(../../images/staff/form/delete.png) no-repeat -0.8rem -0.8rem;
+    z-index: 3;
+}
+
+.changePhotos th img{
+	width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+.changePhotos th span{
+    float: left;
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.changePhotos th div>span{
+	display: block;
+    /* width: 3rem; */
+    height: 3rem;
+    margin-left: 35%;
+    margin-top: 1.5rem;
+    position: relative;
+    background: url(../../images/staff/form/uploadPhoto.png) no-repeat 0rem -0.1rem;
+    background-size: contain;
+}
+
+.changePhotos input{
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	opacity:0;
+	z-index:3;
+	cursor:pointer;
+}
+.loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    z-index: 2;
+}
+
+
+/******************************************************刘杰修改区域起******************************************************/
+/*项目列表弹窗*/
+.publicwindow{
+	position:absolute;
+	display:none;
+	width:100%;
+	height:100%;
+	top:100%;
+	opacity:0;
+	background: #FFFFFF;
+	z-index:11;
+	transition:all 0.3s;
+}
+
+.publicwindowShow{
+	top:0;
+	opacity:1;
+}
+/*项目列表弹出窗头*/
+.publicwindow .pheader{
+	position:absolute;
+	display:none;
+	width:100%;
+	height:3.67rem;
+	top:0;
+	background: #FFFFFF;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+	z-index:4;
+}
+/*搜索框*/
+.publicwindow .psearchbox{
+	position:relative;
+	width:80%;
+	height:2.17rem;
+	margin-top:0.75rem;
+	margin-left:5%;
+	margin-right:4%;
+	background: #F8F6EE;
+	float:left;
+}
+
+.publicwindow .psearchbtn{
+	display:block;
+	position:relative;
+	width:1.17rem;
+	height:1.17rem;
+	margin-left:0.8rem;
+	margin-top:0.5rem;
+	float:left;
+	background:url(../../images/staff/proList/search.png) no-repeat 0 0;
+	background-size:contain;
+}
+
+.publicwindow .psearchinput{
+	position:relative;
+	width:80%;
+	height:2.17rem;
+	margin-left:5%;
+	background: #F8F6EE;
+	border-style:none;
+}
+
+.publicwindow .psearchclear{
+	display:block;
+	position:relative;
+	width:1.17rem;
+	height:1.17rem;
+	float:right;
+	right:0.8rem;
+	margin-top:0.55rem;
+	background:url(../../images/staff/proList/delete.png) no-repeat 0 0;
+	background-size:contain;
+}
+
+.publicwindow .pcancel{
+	position:relative;
+	width:11%;
+	height:1.42rem;
+	line-height:1.42rem;
+	font-size:1.17rem;
+	margin-top:1.13rem;
+	text-align:left;
+	float:right;
+	color: #D1C08A;
+}
+/*中间主体内容显示区块*/
+.publicwindow .pcontent{
+	position:relative;
+	padding-top:3.67rem;
+	padding-bottom:6.92rem;
+	width:100%;
+	height:100%;
+	overflow-y:auto;
+	background: #FFFFFF;
+	z-index:3;
+}
+
+.publicwindow .pcontent li{
+	width:100%;
+	height:4.17rem;
+	border-bottom: 1px solid rgba(209,192,138,0.25);
+	font-size:1.25rem;
+	line-height:4.17rem;
+	padding-left:4.5%;
+}
+
+/*.publicwindow .pcontent li>span:nth-child(1){
+	height:4.17rem;
+	display:block;
+	width:32%;
+	float:left;
+}*/
+
+.publicwindow .pcontent li>span{
+	height:4.17rem;
+	display:block;
+	width:92%;
+	padding-left:8px;
+	text-align:left;
+	float:left;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+/*底部两个按钮*/
+.publicwindow .pbuttom{
+	position:fixed;
+	width:14.5rem;
+	height:6.92rem;
+	right:4.5%;
+	bottom:0;
+	z-index:4;
+}
+/*上一页*/
+.publicwindow .pleft{
+	display:block;
+	width:4.25rem;
+	height:4.25rem;
+	position:relative;
+	margin-left:1.33rem;
+	margin-top:1.34rem;
+	float:left;
+	background:url(../../images/staff/form/leftright.png) no-repeat -0.7rem -1.2rem;   /*变色-6.4rem*/
+	background-size:11rem 12rem;
+}
+/*下一页*/
+.publicwindow .pright{
+	display:block;
+	width:4.25rem;
+	height:4.25rem;
+	position:relative;
+	margin-right:1.33rem;
+	margin-top:1.34rem;
+	float:right;
+	background:url(../../images/staff/form/leftright.png) no-repeat -5.9rem -1.2rem;  /*变色-6.3rem*/
+	background-size:11rem 12rem;
+}
+/******************************************************刘杰修改区域止******************************************************/
+
+/*预览*/
+.view{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	z-index:5;
+	background:#000000;
+	white-space: nowrap;
+}
+
+.view>div{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    transition: all .3s;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	-o-transition: all .3s;
+}
+
+.view>div>div{
+	position:relative;
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: table;
+}
+.view>div>div>div{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.view img{
+	width:100%;
+    height: auto!important;
+    vertical-align: middle;
+}

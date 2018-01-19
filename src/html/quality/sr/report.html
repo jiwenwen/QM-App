@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<link rel="shortcut icon" href="../../../images/favicon.ico" />
+		<link rel="bookmark" href="../../../images/favicon.ico" type="image/x-icon" 　/>
+		<title>金螳螂质量App-中国装饰行业持续领跑者</title>
+		<link rel="stylesheet" href="../../../css/base.css" />
+		<link rel="stylesheet" href="../../../css/quality/sr/report.css" />
+		<link rel="stylesheet" href="../../../css/mobiscroll_date.css" />
+	</head>
+	<body>
+		<div id="QMApp" class="qm-con">
+			<!--header-->
+			<!--<div class="header">
+				<div class="header-content clearfix">
+					<div class="header-middle">
+						<span>质量报表</span>
+					</div>
+				</div>
+			</div>-->
+			<div class="reportPage top-0">
+				<div class="timeInterval">
+					<div class="earlyTime">
+						<input type="text" id="startDate" readonly="readonly" placeholder="选择起始时间" />
+						<div></div>
+					</div>
+					<div class="middleS">~</div>
+					<div class="lateTime">
+						<input type="text" id="endDate" readonly="readonly" placeholder="选择结束时间" />
+						<div></div>
+					</div>
+				</div>
+				<div class="ststistics clearfix">
+					<div class="total clearfix">
+						<p>检查总计：</p>
+						<p v-cloak>{{piechart.QualityCount}}</p>
+						<p>个</p>
+					</div>
+					<div class="cycle clearfix">
+						<p>整改周期：</p>
+						<p v-cloak>{{(Math.floor((piechart.CheckRate)*100))/100}}</p>
+						<p>天/个</p>
+					</div>
+				</div>
+				<div class="ringDiagram" id="cycleData"></div>
+				<div class="histogram" id="columnData"></div>
+			</div>
+			<div class="footer">
+				<div class="footer-content clearfix">
+					<div class="footer-left">
+						<div>
+							<a href="../proList.html">
+								<img src="../../../images/staff/proList/rectification.png">
+								<div >
+									<span>整改</span>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="footer-middle">
+						<div >
+							<a href="../submitQ.html">
+								<img src="../../../images/staff/proList/initiated.png">
+							</a>
+						</div>
+					</div>
+					<div class="footer-right">
+						<div>
+							<a href="report.html">
+								<img src="../../../images/staff/proList/report-selected.png">
+								<div>
+									<span>报表</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../../lib/jquery/jquery.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/mobilePart.js"></script>
+		<script type="text/javascript" src="../../../../lib/jquery/mobiscroll_date.js" ></script>
+		<script type="text/javascript" src="../../../../lib/jquery/mobiscroll.js" ></script>
+		<script type="text/javascript" src="../../../../lib/vue/dist/vue.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/vue/dist/vue-resource.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/echarts/echarts.min.js" ></script>
+		<script type="text/javascript" src="../../../../lib/util_nm.js" ></script>
+		<script type="text/javascript" src="../../../js/quality/sr/report.js" ></script>
+	</body>
+</html>

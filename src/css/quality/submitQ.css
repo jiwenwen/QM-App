@@ -1,0 +1,1074 @@
+.sb_bottom{
+	position:fixed;
+	height:4rem;
+	width:100%;
+	bottom:0;
+	border-top:1px solid #CCC;
+}
+.sb_bottom>div{
+	width:50%;
+	text-align:center;
+	line-height:4rem;
+	font-size:1.25rem;
+	float:left;
+	box-sizing:border-box;
+}
+
+.sb_bottom>div:nth-child(1){
+	border-right:1px solid #FFF;
+}
+
+.sb_bottom>div:nth-child(2){
+	background: #D1C08A;
+    color: #FFFFFF;
+}
+/*头*/
+/* .qm-con .header{
+	position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    transition: filter 0.2s linear;
+    background: #FFFFFF;
+    z-index: 3;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+}
+
+.qm-con .header>div:nth-child(1){
+	position: relative;
+    float: left;
+    height: 2.5rem;
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    left: 6.5%;
+    top: 0.9rem;
+    z-index: 3;
+    color: #666666;
+}
+
+.qm-con .header>div:nth-child(1):before{
+    display: inline-block;
+    position: relative;
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    top: 0.35rem;
+    right: 0rem;
+    background: url(../../images/staff/form/back.png) no-repeat 0 0;
+    background-size: contain;
+}
+
+.qm-con .header>p{
+	position:absolute;
+	top:0.66rem;
+	width:100%;
+	height:3rem;
+	line-height:2.8rem;
+	font-size:1.42rem;
+	color:#A28835;
+	text-align:center;
+	z-index:0;
+}
+
+.qm-con .header>div:nth-child(3){
+	position: relative;
+    float: right;
+    height: 2.5rem;
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    right: 6.5%;
+    top: 1.3rem;
+    z-index: 3;
+    color: #666666;
+} */
+
+/*.qm-con .header>div:nth-child(3):before{
+	display: inline-block;
+    position: relative;
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    top: 0.3rem;
+    right: 0.5rem;
+    background: url(../../images/staff/form/over.png) no-repeat 0 0.33rem;
+    background-size: contain;
+}*/
+
+/*问题提交主体部分，要考虑复用上*/
+.form_submitType1{
+	position: absolute;
+	top: 4.1rem;
+	bottom:4.1rem;
+	width: 100%;
+	overflow-y: auto;
+	transition:filter 0.2s linear;
+}
+
+.form_submitType1Blur{
+	filter:blur(13px);
+}
+
+.form_submitType1>form{
+	width:100%;
+}
+/*问题提交模块六大子模块*/
+
+/*项目名称*/
+.form_submitType1 .projectName{
+	width: 100%;
+    height: 4.17rem;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+}
+
+.form_submitType1 .projectName>label{
+	display: block;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    box-sizing: border-box;
+    float: left;
+    padding-left: 5.3%;
+    padding-top: 1.25rem;
+}
+
+.form_submitType1 .projectName>label:before{
+	content: '*';
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    color:red;
+}
+
+.form_submitType1 .projectName>input{
+	position: relative;
+    float: right;
+    width: 64.7%;
+    height: 3rem;
+    border-radius: 0.17rem;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    margin-right: 5.3%;
+    margin-top: 0.55rem;
+    padding-left: 5px;
+    font-size: 1.25rem;
+    outline: none;
+    text-align: right;
+    border: none;
+}
+
+.form_submitType1 .projectName p{
+	position:absolute;
+	color:red;
+	right:6%;
+	top:5.45rem;
+	display:none;
+}
+/*table表格*/
+.form_submitType1 .formTable{
+	width:100%;
+}
+
+.form_submitType1 .formTable tr{
+	width:100%;
+	border-bottom:1px solid rgba(209,192,138,0.25);
+}
+
+.form_submitType1 .formTable th{
+	position: relative;
+    width: 25.6%;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+    padding-left: 5.3%;
+}
+
+.form_submitType1 .formTable th>span:before{
+	content:'*';
+	display:inline-block;
+	width:0.8rem;
+	height:0.8rem;
+	color:red;
+}
+
+.form_submitType1 .remarks th span{
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 5.3%;
+}
+.form_submitType1 .remarks th span:before{
+	content:''!important;
+}
+
+.remarks{
+	height: 10rem;
+}
+.form_submitType1 .formTable td{
+	width: 60%;
+    vertical-align: middle;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: 5.3%;
+}
+/*问题等级*/
+.form_submitType1 .problemLevel{
+	height:4.17rem;
+}
+
+.form_submitType1 .levelClass{
+	width: 100%;
+    border-radius: 2.25rem;
+    background: #EEEEEE;
+    height: 2rem;
+}
+
+.form_submitType1 .levelClass>li{
+	height:2rem;
+	float:left;
+	width:33.33%;
+	border-radius:2.25rem;
+	text-align:center;
+	line-height:2rem;
+	font-size:1.5rem;
+	/*transition: all 0.1s;*/
+}
+/*等级A*/
+.problemLevel1{
+	background:#FF3F3F;
+	color:#FFFFFF;
+}
+/*等级B*/
+.problemLevel2{
+	background:#FF7F3F;
+	color:#FFFFFF;
+}
+/*等级C*/
+.problemLevel3{
+	background:#F3D570;
+	color:#FFFFFF;
+}
+
+.levelSelect{
+	
+}
+
+/*问题类别*/
+.form_submitType1 .problemType{
+	height:4.17rem;
+}
+
+.form_submitType1 .problemType .problemList{
+	height: 3rem;
+    width: 75%;
+    /* padding-left: 10px; */
+    border: 1px solid #DDDDDD;
+    font-size: 1.25rem;
+    text-align: right;
+    border: none;
+}
+
+.form_submitType1 .problemType-list{
+	width:75%;
+	height:3rem;
+	font-size:1.25rem;
+	border-radius:0.17rem;
+	border-color:#DDDDDD;
+}
+
+/*问题描述*/
+.form_submitType1 .problemDescription{
+	height:4.17rem;
+	position:relative;
+}
+
+/*.form_submitType1 .problemDescription td{
+	padding:0.4rem 0 0.25rem 0;
+}*/
+
+.form_submitType1 .problemDescription input{
+	height: 3rem;
+    width: 75%;
+    /* padding-left: 10px; */
+    /*border: 1px solid #DDDDDD;*/
+    font-size: 1.25rem;
+    text-align: right;
+    border: none;
+}
+
+.form_submitType1 .problemDescription textarea{
+	height: 6.5rem;
+    width: 85%;
+    padding-left: 0.8rem; 
+    border: 1px solid #DDDDDD;
+    font-size: 1.25rem;
+    resize: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: none;
+}
+
+.form_submitType1 .problemDescription p{
+	position:absolute;
+	color:red;
+	top:18rem;
+	right:18%;
+	display:none;
+}
+
+/*合同*/
+.form_submitType1 .contract{
+	height:4.17rem;
+}
+
+.form_submitType1 .contract th span:before{
+	content: ''!important;
+}
+
+.form_submitType1 .contract input{
+	height: 3rem;
+    width: 75%;
+    font-size: 1.25rem;
+    text-align: right;
+    border: none;
+}
+
+/*班组*/
+.form_submitType1 .rectification{
+	height:8.34rem;
+}
+
+.form_submitType1 .rectification>th{
+	border-right:1px solid rgba(209,192,138,0.25);
+}
+
+.form_submitType1 .rectification>td{
+	width: 60%;
+    vertical-align: middle;
+    font-size: 1.25rem;
+    box-sizing: border-box;
+    padding-right:0!important;
+}
+
+.form_submitType1 .rectification>td>table{
+	width:100%;
+} 
+
+.form_submitType1 .rectification>td>table i{
+	display: inline-block;
+	position:relative;
+	width: 1.25rem;
+	height: 1.25rem;
+	border:1px solid #DDD;
+	box-sizing: border-box;
+	margin: 0 5px 0 0;
+	top:2px;
+}
+
+.form_submitType1 .rectification>td>table td{
+	padding-right: 7.5%!important;
+}
+
+.form_submitType1 .rectification>td th{
+	width:35%;
+}
+
+.form_submitType1 .rectification>td>table td input{
+	/*display:none;*/
+	height: 3rem;
+    width: 75%;
+    font-size: 1.25rem;
+    text-align: right;
+    border: none;
+}
+
+.form_submitType1 .rectification td tr{
+	height:4.17rem;
+}
+
+.checked{
+	background:url("../../images/staff/form/over.png") no-repeat 0 0;
+	background-size:120% 100%;
+}
+
+
+/*上传照片*/
+.form_submitType1 .uploadPhotos td{
+	padding:1rem 0;
+	overflow-x:auto;
+}
+
+.form_submitType1 .uploadPhotos i{
+	display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background: url(../../images/staff/form/delete.png) no-repeat -0.8rem -0.8rem;
+    z-index: 3;
+}
+
+.form_submitType1 .uploadPhotos th div{
+	position: relative;
+    min-height: 6.5rem;
+    width: 30%;
+    margin-right: 3%;
+    border: 1px solid #DDDDDD;
+    float: left;
+    margin-top: 0.1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.form_submitType1 .uploadPhotos th img{
+	width:100%;
+	height:auto;
+	display: inline-block;
+	vertical-align: middle;
+	position:absolute;
+	z-index:2;
+	left:0;
+	top:0;
+}
+
+.form_submitType1 .uploadPhotos th div>span{
+	display: block;
+    height: 3rem;
+    margin-left: 35%;
+    margin-top: 1.5rem;
+    position: relative;
+    background: url(../../images/staff/form/uploadPhoto.png) no-repeat 0rem -0.1rem;
+    background-size: contain;
+}
+
+.uploadPhotos>th>span{
+	float: left;
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.45rem;
+}
+
+.form_submitType1 .uploadPhotos input{
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	opacity:0;
+	z-index:3;
+	cursor:pointer;
+	border:none;
+}
+
+.form_submitType1 .uploadPhotos{
+	border:none!important;
+}
+
+.form_submitType1 .uploadPhotos p{
+	color:red;
+	position:absolute;
+	bottom:2px;
+	right:2px;
+	display:none;
+}
+
+/*备注*/
+.form_submitType1 .remarks td{
+	padding:1rem 0;
+}
+
+.form_submitType1 .remarks textarea{
+	min-height: 6.83rem;
+    width: 80%;
+    border-color: #DDDDDD;
+    resize: none;
+    position: absolute;
+    left: 5.3%;
+    top: 2.5rem;
+    border: none;
+    font-size:1.25rem;
+    padding-left:0.8rem;
+}
+
+.form_submitType1 .remarks p{
+	color:red;
+	display:none;
+}
+/*选择问题弹出窗*/
+.problemSub{
+	/*display:block;*/
+	display:none;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:100%;
+	/*opacity:0;*/
+	background:#FFFFFF;
+	z-index:3;
+	transition:all 0.2s linear;
+	overflow-y:auto;
+}
+
+.problemSubclass{
+	top:0!important;
+	/*opacity:1;*/
+}
+
+/*弹出窗顶部*/
+.problemSub .problemList-header{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:4rem;
+	top:0;
+	border-bottom:1px solid #DDDDDD;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+	background:#FFFFFF;
+	z-index:4;
+}
+
+.problemSub .problemList-header div{
+	height:2.7rem;
+	line-height:1.5rem;
+	font-size:1.25rem;
+	top:0.75rem;
+}
+
+.problemSub .problemList-header div:nth-child(1){
+	position: relative;
+    float: left;
+    margin-left: 3%;
+    padding-top: 0.28rem;
+    width: 17%;
+    z-index: 4;
+    color: #666666;
+}
+
+.problemSub .problemList-header div:nth-child(1):before{
+	display: inline-block;
+    content: '';
+    position: relative;
+    top: 0.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: url(../../images/staff/form/back.png) no-repeat 0.3rem 0.1rem;
+    background-size: contain;
+}
+
+.problemSub .problemList-header div:nth-child(2){
+	position:absolute;
+	margin:0 auto;
+	width:100%;
+	text-align:center;
+	font-size:1.42rem;
+	color:#A28835;
+	z-index:0;
+	top:1.25rem;
+}
+
+.problemSub .problemList-header div:nth-child(3){
+	position: relative;
+    float: right;
+    width: 17%;
+    margin-right: 4%;
+    z-index: 4;
+    color: #666666;
+}
+
+.problemSub .problemList-header div:nth-child(3):before{
+	display:inline-block;
+	content:'';
+	position:relative;
+	top:0.4rem;
+	margin-right:0.2rem;
+	width:1.83rem;
+	height:1.83rem;
+	background:url(../../images/staff/form/over.png) no-repeat 0rem 0.3rem;
+	background-size:contain;
+}
+
+.problemSub .problemList{
+	padding-top:4rem;
+	overflow-y: auto;
+}
+
+.problemSub .problemList li{
+	height: 4.17rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.problemSub span{
+	display:block;
+	position:relative;
+	margin-top:1.31rem;
+	margin-left:1.31rem;
+	width:1.55rem;
+	height:1.55rem;
+	float:left;
+	background:url(../../images/staff/form/radio-un.png) no-repeat 0 0;
+	background-size:contain;
+}
+
+.problemSelect{
+	
+}
+
+.problemSub .problemList>li>p{
+    left: 13.9%;
+    height: 4.17rem;
+    line-height: 4.17rem;
+    font-size: 1.25rem;
+    display: inline;
+    white-space: nowrap;
+    margin-left: 13px;
+}
+
+.problemSub .problemList-write{
+	width:100%;
+	position:relative;
+	/*padding-bottom:1rem;*/
+}
+
+.problemSub .problemList-write textarea{
+	position: absolute;
+    top: 1.25rem;
+    min-height: 8.83rem;
+    width: 80%;
+    border-color: #DDDDDD;
+    resize: none;
+    left: 13.9%;
+    padding-left: 10px;
+    border: none;
+    font-size:1.25rem;
+}
+/*项目列表弹窗*/
+.project_list{
+	position:absolute;
+	display:none;
+	width:100%;
+	height:100%;
+	top:100%;
+	opacity:0;
+	background: #FFFFFF;
+	z-index:3;
+	transition:all 0.3s linear;
+}
+
+.project_listShow{
+	top:0!important;
+	opacity:1!important;
+}
+/*项目列表弹出窗头*/
+.project_list .pheader{
+	position:relative;
+	/*display:none;*/
+	width:100%;
+	height:4rem;
+	top:0;
+	background: #FFFFFF;
+	box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+	z-index:4;
+}
+/*搜索框*/
+.project_list .psearchbox{
+	position:relative;
+	width:80%;
+	height:2.8rem;
+	margin-top:0.6rem;
+	margin-left:5%;
+	margin-right:4%;
+	background: #F8F6EE;
+	float:left;
+}
+
+.project_list .psearchbtn{
+	display:block;
+	position:relative;
+	width:1.17rem;
+	height:1.17rem;
+	margin-left:1rem;
+	margin-top:0.8rem;
+	float:left;
+	background:url(../../images/staff/proList/search.png) no-repeat 0 0;
+	background-size:contain;
+}
+
+.project_list .psearchinput{
+	position:relative;
+	width:80%;
+	height:2.8rem;
+	margin-left:5%;
+	background: #F8F6EE;
+	border-style:none;
+}
+
+.project_list .psearchclear{
+	display:block;
+	position:relative;
+	width:1.03rem;
+	height:1.17rem;
+	float:right;
+	right:0.8rem;
+	top:0.9rem;
+	background:url(../../images/staff/proList/delete.png) no-repeat 0 0;
+	background-size:contain;
+}
+
+.project_list .pcancel{
+	position:relative;
+	width:11%;
+	height:1.6rem;
+	line-height:1.8rem;
+	font-size:1.17rem;
+	margin-top:1.13rem;
+	text-align:left;
+	float:right;
+	color: #D1C08A;
+}
+/*中间主体内容显示区块*/
+.pcontentOut{
+	position: absolute;
+	top:4rem;
+	bottom:0;
+    /*padding-top: 4rem;*/
+    /*padding-bottom: 0.5rem;*/
+    width: 100%;
+    /*height: 100%;*/
+    overflow-y: auto;
+    background: #FFFFFF;
+    z-index: 3;
+}
+
+.project_list .pcontent{
+	/* position:relative;
+	padding-top:4rem;
+	padding-bottom:0.5rem; */
+	width:100%;
+	/*height:100%;*/
+	/* overflow-y:auto;
+	background: #FFFFFF;
+	z-index:3; */
+}
+
+.project_list .pcontent li{
+	width:100%;
+	height:4.17rem;
+	border-bottom: 1px solid rgba(209,192,138,0.25);
+	font-size:1.25rem;
+	line-height:4.17rem;
+	padding-left:4.5%;
+}
+
+.project_list .pcontent li>span:nth-child(1){
+	height:4.17rem;
+	display:block;
+	width:32%;
+	float:left;
+}
+
+.project_list .pcontent li>span:nth-child(2){
+	height:4.17rem;
+	display:block;
+	width:62%;
+	padding-left:8px;
+	text-align:left;
+	float:left;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+/*底部两个按钮*/
+.project_list .pbuttom{
+	display:none;
+	position:fixed;
+	width:14.5rem;
+	height:6.92rem;
+	right:4.5%;
+	bottom:0;
+	z-index:4;
+}
+/*上一页*/
+.project_list .pleft{
+	display:block;
+	width:4.25rem;
+	height:4.25rem;
+	position:relative;
+	margin-left:1.33rem;
+	margin-top:1.34rem;
+	float:left;
+	background:url(../../images/staff/form/leftright.png) no-repeat -0.7rem -1.2rem;   /*变色-6.4rem*/
+	background-size:11rem 12rem;
+}
+/*下一页*/
+.project_list .pright{
+	display:block;
+	width:4.25rem;
+	height:4.25rem;
+	position:relative;
+	margin-right:1.33rem;
+	margin-top:1.34rem;
+	float:right;
+	background:url(../../images/staff/form/leftright.png) no-repeat -5.9rem -1.2rem;  /*变色-6.3rem*/
+	background-size:11rem 12rem;
+}
+
+.problemTypewindow{
+	display:none;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    /*padding-top:4rem;*/
+    z-index: 6;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.2s linear;
+}
+
+.problemTypewindow-header{
+	position:absolute;
+	display:none;
+	width:100%;
+	top:0;
+	height:4rem;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.15);
+	background:#FFFFFF;
+	color: #A28835;
+	font-size:1.42rem;
+	line-height:4rem;
+	text-align:center;
+	z-index:4;
+}
+
+.problemTypewindow-header span{
+    display: block;
+    position: absolute;
+    width: 17%;
+    top: 0;
+    left: 3%;
+    color: #666666;
+    font-size: 1.25rem;
+    line-height: 4.2rem;
+}
+
+.problemTypewindow-header span:before{
+	display: inline-block;
+    position: relative;
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    top: 0.3rem;
+    background: url(../../images/staff/form/back.png) no-repeat 0rem 0rem;
+    background-size: contain;
+}
+
+.problemTypewindow .problemList{
+	position: relative; 
+    padding-top: 4rem;
+    overflow-y: auto;
+    background: #FFF;
+    /* z-index: 6; */
+    height: 100%;
+    overflow-y: auto;
+}
+
+.problemTypewindow .problemList>li{
+	width: 100%;
+    height: 4.17rem;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    font-size: 1.25rem;
+    line-height: 4.17rem;
+    padding-left: 4.5%;
+    z-index:4;
+}
+/*合同弹窗*/
+ .contract_list, .team_list{
+	position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    opacity: 0;
+    background: #FFFFFF;
+    z-index: 3;
+    transition: all 0.3s ease-out;
+}
+
+.team_list .pop_header,.contract_list .pop_header {
+	position: relative;
+    /*display: none;*/
+    width: 100%;
+    height: 4rem;
+    top: 0;
+    background: #FFFFFF;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.15);
+    z-index: 4;
+}
+
+.team_list .pop_search,.contract_list .pop_search{
+	position: relative;
+    width: 80%;
+    height: 2.8rem;
+    margin-top: 0.6rem;
+    margin-left: 5%;
+    margin-right: 4%;
+    background: #F8F6EE;
+    float: left;
+}
+
+.team_list .pop_searchButton,.contract_list .pop_searchButton{
+	display: block;
+    position: relative;
+    width: 1.17rem;
+    height: 1.17rem;
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+    float: left;
+    background: url(../../images/staff/proList/search.png) no-repeat 0 0;
+    background-size: contain;
+}
+
+.team_list .pop_searchInput,.contract_list .pop_searchInput{
+	position: relative;
+    width: 80%;
+    height: 2.8rem;
+    margin-left: 5%;
+    background: #F8F6EE;
+    border-style: none;
+}
+
+.team_list .pop_searchClear,.contract_list .pop_searchClear{
+	display: block;
+    position: relative;
+    width: 1.03rem;
+    height: 1.17rem;
+    float: right;
+    right: 0.8rem;
+    top: 0.9rem;
+    background: url(../../images/staff/proList/delete.png) no-repeat 0 0;
+    background-size: contain;
+}
+
+.team_list .pop_cancel,.contract_list .pop_cancel{
+	position: relative;
+    width: 11%;
+    height: 1.6rem;
+    line-height: 1.8rem;
+    font-size: 1.17rem;
+    margin-top: 1.13rem;
+    text-align: left;
+    float: right;
+    color: #D1C08A;
+}
+
+.team_list .pop_contentOut,.contract_list .pop_contentOut{
+	position: absolute;
+    top: 4rem;
+    bottom:0;
+    /*padding-top: 4rem;*/
+    /*padding-bottom: 0.5rem;*/
+    width: 100%;
+    /*height: 100%;*/
+    overflow-y: auto;
+    background: #FFFFFF;
+    z-index: 3;
+}
+
+.team_list .pop_content,.contract_list .pop_content{
+    width: 100%;
+}
+
+.team_list .pop_content li,.contract_list .pop_content li{
+	width: 100%;
+    height: 4.17rem;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+    font-size: 1.25rem;
+    line-height: 4.17rem;
+    padding-left: 4.5%;
+    position: relative;
+}
+
+.team_list .pop_content li>span:nth-child(1),.contract_list .pop_content li>span:nth-child(1){
+	height: 4.17rem;
+    display: block;
+    width: 32%;
+    /* float: left; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    padding-left: 10px;
+}
+
+.team_list .pop_content li>span:nth-child(2),.contract_list .pop_content li>span:nth-child(2){
+    height: 4.17rem;
+    display: block;
+    width: 116px;
+    /* padding-left: 8px; */
+    text-align: right;
+    float: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.team_list .pop_content li>span:nth-child(3),.contract_list .pop_content li>span:nth-child(3){
+	position: absolute;
+    left: 70px;
+    top: 1.5rem;
+    width: 30px;
+    height: 1.17rem;
+    box-sizing: border-box;
+    line-height: 1.27rem;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+}
+/*班组弹窗*/
+/*预览*/
+.view{
+	display:none;
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	z-index:5;
+	background:#000000;
+	white-space: nowrap;
+}
+
+.view>div{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    transition: all .2s;
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+	-o-transition: all .2s;
+}
+
+.view>div>div{
+	position:relative;
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: table;
+}
+.view>div>div>div{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.view img{
+	width:100%;
+    height: auto;
+    vertical-align: middle;
+}

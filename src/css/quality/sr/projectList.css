@@ -1,0 +1,76 @@
+
+/*detail*/
+.detail{
+    /*另一种方法*/
+    /*   position: relative;
+        top: 7rem;
+        margin-left: 6.5%;
+        width: 87%;
+        margin-top: 0.75rem;
+        padding-bottom: 7rem;*/
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+    overflow-y: auto;
+    bottom: 0rem;
+    z-index: 2;
+}
+
+.detail .detail-content{
+    width: 100%;
+}
+
+.detail .review{
+    display: block;
+}
+.detail .draft{
+    display: none;
+}
+.detail .rectification{
+    display: none;
+}
+.detail .complete{
+    display: none;
+}
+
+.detail .detail-content .detail-item{
+    padding: 1rem 6.5%;
+    border-bottom: 1px solid rgba(209,192,138,0.25);
+}
+.detail .detail-content .detail-item .detail-first{
+    position: relative;
+}
+.detail .detail-content .detail-item .detail-first span:nth-child(1){
+    font-size: 1.25rem;
+    color: #666666;
+}
+.detail .detail-content .detail-item .detail-first span:nth-child(2){
+    font-size: 1.1rem;
+    color: #999;
+    position: absolute;
+    right: 0rem;
+}
+.detail .detail-content .detail-item .detail-second{
+    font-size: 1.25rem;
+    color: #333333;
+    margin-top: 0.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.detail .detail-content .detail-item .detail-third{
+    font-size: 1.17rem;
+    color: #999999;
+    margin-top: 0.83rem;
+}
+.detail .detail-content .detail-item .detail-third span{
+    margin-right: 0.42rem;
+}
+/**/
+.loading{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    z-index: 1;
+}

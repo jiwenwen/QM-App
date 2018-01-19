@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="shortcut icon" href="../../../images/favicon.ico" />
+    <link rel="bookmark" href="../../../images/favicon.ico" type="image/x-icon"/>
+    <title>金螳螂质量App-中国装饰行业持续领跑者</title>
+    <link rel="stylesheet" href="../../../css/base.css" />
+    <link rel="stylesheet" href="../../../css/quality/sr/reviewList.css">
+    <link rel="stylesheet" href="../../../css/mobiscroll_date.css">
+    <link rel="stylesheet" href="../../../css/zepto.mdatetimer.css">
+</head>
+<body>
+<div id="QMApp" class="qm-con">
+    <!--header-->
+    <!--<div class="header">
+        <div class="header-content clearfix">
+            <div class="header-middle">
+                <span>复核明细</span>
+            </div>
+        </div>
+    </div>-->
+    <!--content-->
+    <div class="detail top-0">
+        <div class="detail-content">
+            <!--整改过一次-->
+            <div class="detail-item clearfix">
+                <div class="detail-first">
+                    <div></div>
+                    <div>{{rectificationOnce1.Type_Name}}-{{rectificationOnce1.Question_Level}}级</div>
+                    <div>
+                        <span>{{rectificationOnce1.Create_User}}</span>
+                        <span>{{rectificationOnce1.Create_Date}}</span>
+                    </div>
+                </div>
+                <div class="detail-second">
+                    <div>
+                        <span>{{rectificationOnce1.Question_Desc}}</span>
+                    </div>
+                    <div v-if="rectificationOnce1.Memo!=null">
+                        <span>备注：{{rectificationOnce1.Memo}}</span>
+                    </div>
+                    <div class="img-group">
+                        <ul class="clearfix">
+                            <li v-for="message in rectificationOnce1.Attachments"  v-on:click="imgChange">
+                                <img v-if="rectificationOnce1.Attachments.length!=0" v-bind:src="message.filePath">
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="detail-item clearfix">
+                <div class="detail-first">
+                    <div></div>
+                    <div>整改反馈</div>
+                    <div>
+                        <span v-if="rectificationOnce2">{{rectificationOnce2.Create_User_Name}}</span>
+                        <span v-if="rectificationOnce2">{{rectificationOnce2.Create_Date}}</span>
+                    </div>
+                </div>
+                <div class="detail-second">
+                    <div>
+                        <span v-if="rectificationOnce2">{{rectificationOnce2.Result_Desc}}</span>
+                    </div>
+                    <div class="img-group">
+                        <ul class="clearfix">
+                            <li v-for="message in rectificationOnce2.Attachments"  v-on:click="imgChange">
+                                <img v-if="rectificationOnce2.Attachments.length!=0" v-bind:src="message.filePath">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--整改过多次-->
+            <div class="detail-item clearfix">
+                <div class="detail-first">
+                    <div></div>
+                    <div>整改反馈</div>
+                    <div>
+                        <span>{{rectificationLast.Create_User_Name}}</span>
+                        <span>{{rectificationLast.Create_Date}}</span>
+                    </div>
+                </div>
+                <div class="detail-second">
+                    <div>
+                        <span>{{rectificationLast.Question_Desc}}</span>
+                    </div>
+                    <div class="img-group">
+                        <ul class="clearfix">
+                            <li v-for="message in rectificationLast.Attachments"  v-on:click="imgChange">
+                                <img v-if="rectificationLast.Attachments.length!=0" v-bind:src="message.filePath">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="expand-detail">
+                <div class="expand-detail-content">
+                    <template  v-for="message in rectificationRepeated">
+                        <div class="expand-detail-item begin"  v-if="message.Flag==0">
+                            <div class="item-content">
+                                <div class="content-img">
+                                    <img src="../../../images/staff/detail/begin.png">
+                                </div>
+                                <div class="content-first clearfix">
+                                    <div class="content-first-left clearfix">
+                                        <span>{{message.Create_User_Name}}</span>
+                                        <span>{{message.Mobile}}</span>
+
+                                    </div>
+                                    <div  class="content-first-right clearfix">
+                                        <span>发起人</span>
+                                        <span>{{message.Create_Date}}</span>
+                                    </div>
+                                </div>
+                                <div class="content-second">
+                                    <div class="content-second1" v-if="message.Question_Level">
+                                        <span>{{message.Question_Type}}-{{message.Question_Level}}级</span>
+                                    </div>
+                                    <div class="content-second1" v-if="!message.Question_Level">
+                                        <span>{{message.Question_Type}}</span>
+                                    </div>
+                                    <div class="content-second2">
+                                        <span>{{message.Question_Desc}}</span>
+                                    </div>
+                                    <div class="content-second4" v-if="message.Memo!=null">
+                                        <span>备注：{{message.Memo}}</span>
+                                    </div>
+                                    <div class="content-second3">
+                                        <ul class="clearfix">
+                                            <li v-for="message2 in message.Attachments"  v-on:click="imgChange">
+                                                <img v-bind:src="message2.filePath">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-detail-item rectification"  v-if="message.Flag==1">
+                            <div class="item-content">
+                                <div class="content-img">
+                                    <img src="../../../images/staff/detail/rectification.png">
+                                </div>
+                                <div class="content-first clearfix">
+                                    <div class="content-first-left clearfix">
+                                        <span>{{message.Create_User_Name}}</span>
+                                        <span>{{message.Mobile}}</span>
+                                    </div>
+                                    <div  class="content-first-right clearfix">
+                                        <span v-if="message.Is_Revise==0">未整改</span>
+                                        <span v-if="message.Is_Revise==1">整改</span>
+                                        <span>{{message.Create_Date}}</span>
+                                    </div>
+                                </div>
+                                <div class="content-second">
+                                    <div class="content-second1">
+                                        <span>{{message.Question_Desc}}</span>
+                                    </div>
+                                    <div class="content-second3">
+                                        <ul class="clearfix">
+                                            <li v-for="message3 in message.Attachments" v-on:click="imgChange">
+                                                <img v-bind:src="message3.filePath">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-detail-item rectification-reject"  v-if="message.Flag==2">
+                            <div class="item-content">
+                                <div class="content-img">
+                                    <img src="../../../images/staff/detail/reject.png">
+                                </div>
+                                <div class="content-first clearfix">
+                                    <div class="content-first-left clearfix">
+                                        <span>{{message.Create_User_Name}}</span>
+                                        <span>{{message.Mobile}}</span>
+
+                                    </div>
+                                    <div  class="content-first-right clearfix">
+                                        <span>不达标</span>
+                                        <span>{{message.Create_Date}}</span>
+                                    </div>
+                                </div>
+                                <div class="content-second">
+                                    <div class="content-second1">
+                                        <span>{{message.Question_Desc}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expand-detail-item rectification-reject"  v-if="message.Flag==3">
+                            <div class="item-content">
+                                <div class="content-img">
+                                    <img src="../../../images/staff/detail/pass.png">
+                                </div>
+                                <div class="content-first clearfix">
+                                    <div class="content-first-left clearfix">
+                                        <span>{{message.Create_User_Name}}</span>
+                                        <span>{{message.Mobile}}</span>
+
+                                    </div>
+                                    <div  class="content-first-right clearfix">
+                                        <span>达标</span>
+                                        <span>{{message.Create_Date}}</span>
+                                    </div>
+                                </div>
+                                <div class="content-second">
+                                    <div class="content-second1">
+                                        <span>{{message.Question_Desc}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="expand-button" v-on:click="retract" typeid="0">
+                <span>展开审核记录</span>
+                <img src="../../../images/staff/detail/expand.png">
+            </div>
+        </div>
+    </div>
+    <!--审批选择-->
+    <div class="bottom">
+        <div class="bottom-left" v-on:click="unsuccess">
+            <span>不达标</span>
+        </div>
+        <div class="bottom-right" v-on:click="success">
+            <span>达标</span>
+        </div>
+    </div>
+    <!--弹框-->
+    <div class="pub-confirmSub">
+        <div class="pub-confirmWindow">
+            <div class="pub-title">确认提交？</div>
+            <div class="pub-content">
+                <div class="closeTime">
+                    <p>整改时限</p>
+                    <input readonly="readonly" id="time-select" placeholder="请选择时间"/>
+                </div>
+                <div class="closeReseon">
+                    <p>复核意见</p>
+                    <textarea class="advice"></textarea>
+                </div>
+            </div>
+            <div class="pub-buttom">
+                <div class="pub-cancel" value="false" v-on:click="cancel">取消</div>
+                <div class="pub-confirm" value="true" v-on:click="submit">确定</div>
+            </div>
+        </div>
+    </div>
+    <!--loading-->
+    <div class="loading"></div>
+    <!--轮播-->
+    <div class="view">
+        <template v-for="(a,index) in viewdata">
+            <div class="touch" v-if="index==0" v-bind:style="{marginLeft:displacement + '%'}">
+                <div v-on:click="hideImg">
+                    <div>
+                        <img v-bind:src="a.path">
+                    </div>
+                </div>
+            </div>
+            <div class="touch" v-else>
+                <div v-on:click="hideImg">
+                    <div>
+                        <img v-bind:src="a.path">
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+    <div class="submit-cover">
+        <div class="cover-inner load5">
+            <div class="loader">Loading...</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../../../lib/jquery/jquery.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/mobilePart.js"></script>
+<script type="text/javascript" src="../../../../lib/jquery/mobiscroll_date.js" ></script>
+<script type="text/javascript" src="../../../../lib/jquery/mobiscroll.js" ></script>
+<script type="text/javascript" src="../../../../lib/vue/dist/vue.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/vue/dist/vue-resource.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/vue/dist/vue-router.min.js" ></script>
+<script type="text/javascript" src="../../../../lib/util_nm.js" ></script>
+<script type="text/javascript" src="../../../js/quality/sr/reviewList.js" ></script>
+</body>
+</html>
